@@ -14,18 +14,19 @@ import Gallery from "./components/Gallery";
 import Feedback from "./components/Feedback";
 import User from "./pages/User";
 import Footer from "./components/Footer";
-import AuthProvider from "./provider/AuthProvider";
+// import AuthProvider from "./provider/AuthProvider";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Cart from "./components/Cart";
 import { MyContextProvider } from "./context/Context.jsx";
 import Ourteam from "./components/Ourteam";
+
 function App() {
   return (
     <div className="app">
       <MyContextProvider>
         <BrowserRouter>
-          <AuthProvider>
+          {/* <AuthProvider> */}
             <Navbar />
             <Routes>
               {/* Use Element to wrap the Home component */}
@@ -50,7 +51,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
             </Routes>
             <Footer />
-          </AuthProvider>
+          {/* </AuthProvider> */}
         </BrowserRouter>
       </MyContextProvider>
     </div>
