@@ -1,0 +1,32 @@
+/* FloatingParticles.css */
+.floating-particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-with-particles {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Specific particle effects for different sections */
+.about-particles {
+  opacity: 0.4;
+}
+
+.services-particles {
+  opacity: 0.6;
+}
+
+.gallery-particles {
+  opacity: 0.3;
+}
+
+.contact-particles {
+  opacity: 0.5;
+}

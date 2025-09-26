@@ -1,13 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaEnvelope,
-  FaArrowUp,
-} from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll"; // Import ScrollLink from react-scroll
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaArrowUp } from "react-icons/fa";
+import { FooterSection } from "./ui/footer-section";
 
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,110 +24,35 @@ function Footer() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <footer>
-      {isVisible && (
-        <button className="scroll-to-top" onClick={scrollToTop}>
-          <FaArrowUp />
-        </button>
-      )}
-
-      <div className="footer-container">
-        <div className="logo">
-          <h1>Yoga & Meditation</h1>
-        </div>
-
-        <div className="about-me">
-          <h5>About Us</h5>
-          <p>
-            Abdulwase, Roshini, Louis, Kidan, and Shaqayeq, students at DCI in Germany, collaborated to create a React full-stack yoga page. Remotely they built a captivating yoga platform, showcasing teamwork and innovation.
-          </p>
-
-          <div className="icons">
-            <ul>
-              <li className="list-group">
-                <a href="https://www.facebook.com">
-                  <FaFacebook />
-                </a>
-              </li>
-              <li className="list-group">
-                <a href="https://www.instagram.com">
-                  <FaInstagram />
-                </a>
-              </li>
-              <li className="list-group">
-                <a href="https://www.linkedin.com">
-                  <FaLinkedin />
-                </a>
-              </li>
-              <li className="list-group">
-                <a href="#">
-                  <FaEnvelope />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="links">
-          <ul>
-            <h5>Links</h5>
-            <li className="list-group">
-              {/* Use ScrollLink to scroll to a specific section */}
-              <ScrollLink
-                className="footer-link"
-                to="home-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Home
-              </ScrollLink>
-            </li>
-            <li className="list-group">
-              <ScrollLink
-                className="footer-link"
-                to="aboutme-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                About
-              </ScrollLink>
-            </li>
-            <li className="list-group">
-              <ScrollLink
-                className="footer-link"
-                to="demo-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Demo
-              </ScrollLink>
-            </li>
-            <li className="list-group">
-              <ScrollLink
-                className="footer-link"
-                to="services-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Services
-              </ScrollLink>
-            </li>
-          </ul>
-        </div>
-        <Outlet />
-      </div>
-      <div className="copyright p-3">© 2023 Copyright Reserved</div>
-    </footer>
+    <>
+      {/* Enhanced Footer Component */}
+      <FooterSection />
+      
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {isVisible && (
+          <motion.button
+            className="fixed bottom-8 right-8 z-50 p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-2xl hover:from-red-600 hover:to-red-700 transition-all duration-300 group"
+            onClick={scrollToTop}
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0, rotate: 180 }}
+            whileHover={{ scale: 1.1, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <FaArrowUp className="w-5 h-5 group-hover:animate-bounce text-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 

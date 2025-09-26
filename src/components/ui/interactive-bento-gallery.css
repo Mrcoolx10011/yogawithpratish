@@ -1,0 +1,153 @@
+/* Interactive Bento Gallery Integration Styles */
+.gallery-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9f7f4 0%, #f2ede8 50%, #ece8e7 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery-container .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure the bento gallery works with your existing color scheme */
+.gallery-container .bg-clip-text {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 30%, #cd853f 70%, #d4af37 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+/* Enhance the modal backdrop */
+.gallery-container .backdrop-blur-lg {
+  background: rgba(247, 244, 241, 0.95) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* Style the dock with yoga theme */
+.gallery-container .bg-sky-400\/20 {
+  background: rgba(212, 175, 55, 0.2) !important;
+}
+
+.gallery-container .border-blue-400\/30 {
+  border-color: rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Custom scrollbar for the gallery */
+.gallery-container ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gallery-container ::-webkit-scrollbar-track {
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+}
+
+.gallery-container ::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+.gallery-container ::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 2rem 0;
+  }
+}
+
+/* Loading state for images */
+.gallery-container img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-container img:not([src]) {
+  opacity: 0;
+}
+
+/* Enhance hover effects for yoga theme */
+.gallery-container .cursor-move:hover {
+  transform: scale(1.05) rotateZ(1deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25), 0 5px 15px rgba(212, 175, 55, 0.12);
+  z-index: 10;
+}
+
+.gallery-container .cursor-move {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container .cursor-move::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(212, 175, 55, 0.1), 
+    transparent, 
+    rgba(212, 175, 55, 0.1), 
+    transparent
+  );
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.gallery-container .cursor-move:hover::after {
+  opacity: 1;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced glow effects */
+.gallery-container .group:hover .absolute.inset-0.bg-gradient-to-t {
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.9) 0%, 
+    rgba(212, 175, 55, 0.3) 30%,
+    rgba(0, 0, 0, 0.6) 60%, 
+    transparent 100%
+  );
+}
+
+/* Make sure the floating particles don't interfere */
+.gallery-particles {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .gallery-container {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  }
+  
+  .gallery-container .backdrop-blur-lg {
+    background: rgba(45, 45, 45, 0.95) !important;
+  }
+}

@@ -2,13 +2,11 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FcMenu } from "react-icons/fc";
 import { GrClose } from "react-icons/gr";
-import { FaUserCircle } from "react-icons/fa";
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import  {useMyContext } from "../context/Context.jsx";
+import logo from "../assets/images/yoga-with-pratish-1.webp";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const {cart} =useMyContext()
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
@@ -44,7 +42,25 @@ function Navbar() {
     <div className="navbar-container">
       <nav className={isOpen ? "navbar expanded" : "navbar"}>
         <div className="logo">
-          <h1>Y&M</h1>
+          <Link to="/" onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setIsOpen(false);
+          }}>
+            <img 
+              src={logo} 
+              alt="Yoga with Pratish" 
+              style={{
+                height: '50px',
+                width: 'auto',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '2px solid #d4af37',
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+            />
+          </Link>
         </div>
         <div>
           <ul className={`nav-menu ${isOpen ? "show-menu" : ""}`}>
@@ -70,6 +86,16 @@ function Navbar() {
             </li>
             <li className="item">
               <Link
+                to="/my-teachings"
+                className="links link-color"
+                activeClassName="active-link"
+                onClick={toggleNav}
+              >
+                My Teachings
+              </Link>
+            </li>
+            <li className="item">
+              <Link
                 to="/services"
                 className="links link-color"
                 activeClassName="active-link"
@@ -78,10 +104,20 @@ function Navbar() {
                 Services
               </Link>
             </li>
+            <li className="item">
+              <Link
+                to="/batch-timings"
+                className="links link-color"
+                activeClassName="active-link"
+                onClick={toggleNav}
+              >
+                Batch Timings
+              </Link>
+            </li>
             <li className="contact-btn item">
               <button>
                 <Link
-                  to="/contacts"
+                  to="/contact"
                   className="links"
                   activeClassName="active-link"
                   onClick={toggleNav}
@@ -89,19 +125,6 @@ function Navbar() {
                   Contact
                 </Link>
               </button>
-            </li>
-            <li className="cart ">
-              
-              <Link className="links" to="/cart">
-                < AiOutlineShoppingCart className="cart-btn"/>
-                <span className="quantity">{cart.length}</span>
-              </Link>
-           
-          </li>
-            <li className="profile-btn">
-              <Link to="/login" className="links">
-                <FaUserCircle className="user" />
-              </Link>
             </li>
           </ul>
         </div>
