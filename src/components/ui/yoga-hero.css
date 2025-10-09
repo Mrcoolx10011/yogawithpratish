@@ -5,6 +5,8 @@
   height: 100vh; /* Only take hero space */
   overflow: hidden;
   background: linear-gradient(135deg, #f7f4f1 0%, #ece8e7 50%, #d4c5b7 100%);
+  /* Prevent touch event conflicts on mobile */
+  touch-action: pan-y pinch-zoom;
 }
 
 .yoga-hero-canvas {
@@ -16,6 +18,8 @@
   z-index: 1;
   pointer-events: none;
   transition: opacity 0.6s ease-out;
+  /* Ensure no touch interference */
+  touch-action: none;
 }
 
 .yoga-hero-content {
@@ -32,6 +36,45 @@
   color: #333;
   pointer-events: none;
   transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+  /* Critical fix for mobile touch */
+  touch-action: none;
+}
+
+/* Allow pointer events only for interactive elements */
+.yoga-hero-content .cta-primary,
+.yoga-hero-content .cta-outline,
+.yoga-hero-content .floating-btn {
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .yoga-hero-container {
+    /* Prevent any touch event bubbling issues */
+    isolation: isolate;
+  }
+  
+  .yoga-hero-content {
+    /* On mobile, only allow touch on specific elements */
+    touch-action: none;
+  }
+  
+  /* Ensure only buttons are touchable */
+  .yoga-hero-content > * {
+    pointer-events: none;
+  }
+  
+  .yoga-hero-content .cta-primary,
+  .yoga-hero-content .cta-outline,
+  .yoga-hero-content .floating-btn,
+  .yoga-hero-content a {
+    pointer-events: auto;
+    touch-action: manipulation;
+    /* Prevent touch event bubbling */
+    position: relative;
+    z-index: 100;
+  }
 }
 
 .yoga-hero-title {

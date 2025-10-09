@@ -59,8 +59,23 @@ function App() {
 }
 
 function Home() {
+  // Prevent touch event conflicts on mobile
+  const handleTouchStart = (e) => {
+    // Prevent any unwanted navigation on touch
+    if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('a')) {
+      return; // Allow normal button/link behavior
+    }
+  };
+
   return (
-    <>
+    <div 
+      onTouchStart={handleTouchStart}
+      style={{ 
+        touchAction: 'pan-y pinch-zoom',
+        position: 'relative',
+        isolation: 'isolate'
+      }}
+    >
       <Hero />
       <PracticeLibrary />
       <ClassFlowSection />
@@ -69,7 +84,7 @@ function Home() {
       <Gallery />
       <Feedback />
       <Contacts />
-    </>
+    </div>
   );
 }
 

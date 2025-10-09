@@ -56,3 +56,62 @@ section,
     margin-top: 100px;
   }
 }
+
+/* Mobile Touch Event Fixes for Home Section */
+@media (max-width: 768px) and (pointer: coarse) {
+  /* Fix for mobile touch events - prevent accidental navigation */
+  body {
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  /* Ensure sections don't interfere with each other */
+  section {
+    position: relative;
+    isolation: isolate;
+    touch-action: pan-y;
+  }
+  
+  /* Home section specific fixes */
+  .app > div:first-child {
+    isolation: isolate;
+  }
+  
+  /* Prevent accordion click conflicts */
+  button, [role="button"], .accordion-trigger {
+    touch-action: manipulation;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Ensure buttons are properly clickable */
+  button:active, [role="button"]:active {
+    transform: scale(0.98);
+  }
+  
+  /* Prevent any overlay interference */
+  .hero-container, .yoga-hero-container {
+    contain: layout style;
+  }
+  
+  /* Fix for accordion items in practice library */
+  .practice-library-section button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+/* Additional mobile accessibility fixes */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover\:bg-gray-50:hover {
+    background-color: initial;
+  }
+  
+  /* Make sure touch targets are properly sized */
+  button, [role="button"], a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

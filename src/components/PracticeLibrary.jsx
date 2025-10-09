@@ -71,6 +71,13 @@ function PracticeLibrary() {
     }));
   };
 
+  // Prevent event bubbling on mobile touch
+  const handleToggleClick = (section, event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleSection(section);
+  };
+
   const renderAccordionSection = (title, data, type, level) => {
     const sectionKey = `${type}-${level}`;
     const isOpen = openSections[sectionKey];
@@ -80,7 +87,8 @@ function PracticeLibrary() {
       <div key={sectionKey} className={`border ${colors.border} rounded-lg mb-4 overflow-hidden shadow-sm`}>
         <button
           className="w-full text-left py-4 px-6 bg-white hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
-          onClick={() => toggleSection(sectionKey)}
+          onClick={(e) => handleToggleClick(sectionKey, e)}
+          style={{ touchAction: 'manipulation', userSelect: 'none' }}
         >
           <span className="flex items-center">
             <span className={`w-3 h-3 ${colors.bg} rounded-full mr-3`}></span>
