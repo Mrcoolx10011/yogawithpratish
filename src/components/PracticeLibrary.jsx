@@ -177,20 +177,6 @@ function PracticeLibrary() {
             </Card>
           </div>
 
-          {/* Additional CTA Section */}
-          <div className="text-center mt-12 md:mt-16">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-3xl mx-auto shadow-lg">
-              <h3 className="text-xl md:text-2xl font-serif mb-3 md:mb-4 text-[#333333]">
-                Master <span className="text-[#D4A373]">Ancient Practices</span>
-              </h3>
-              <p className="text-[#333333]/80 mb-4 md:mb-6 text-sm md:text-base">
-                From foundational poses to advanced techniques, discover a complete library of traditional yoga practices
-              </p>
-              <button className="bg-[#3A5A40] hover:bg-[#D4A373] text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-sm md:text-base">
-                Start Your Practice
-              </button>
-            </div>
-          </div>
         </div>
       </section>
     </div>

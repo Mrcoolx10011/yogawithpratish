@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import BatchTimings from "./pages/BatchTimings";
 import FreeTrial from "./pages/FreeTrial";
 import ScrollToTop from "./components/ScrollToTop";
+import { DailyRoutineSection } from "./components/DailyRoutineSection";
 
 function App() {
   return (
@@ -77,11 +78,12 @@ function Home() {
       }}
     >
       <Hero />
-      <PracticeLibrary />
-      <ClassFlowSection />
       <WellnessSection />
-      <YouTubeSection />
+      <DailyRoutineSection/>  
       <Gallery />
+      <ClassFlowSection />
+      <YouTubeSection />
+      <PracticeLibrary />
       <Feedback />
       <Contacts />
     </div>

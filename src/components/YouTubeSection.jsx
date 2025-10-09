@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FloatingParticles } from './ui/FloatingParticles';
 import './ui/FloatingParticles.css';
+import channelLogo from '../assets/images/yoga-with-pratish-1.webp';
 
 function YouTubeSection() {
   // Your actual YouTube videos data with correct video IDs
@@ -92,24 +93,72 @@ function YouTubeSection() {
               YouTube <span className="text-[#ff0000]">Videos</span>
             </h2>
             <div className="w-16 md:w-20 h-1 bg-[#ff0000] mx-auto mb-4 md:mb-6"></div>
-            <p className="text-base md:text-lg text-[#333333]/80 max-w-2xl mx-auto px-4">
+            <p className="text-base md:text-lg text-[#333333]/80 max-w-2xl mx-auto px-4 mb-8">
               Visit our YouTube channel for yoga tutorials and wellness content
             </p>
-            <a 
-              href={`https://www.youtube.com/channel/${channelId}`}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center mt-6 bg-[#ff0000] hover:bg-[#cc0000] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-              Visit YouTube Channel
-            </a>
+          </div>
+
+          {/* Channel Info Card */}
+          <div className="mb-12 md:mb-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-4xl mx-auto shadow-xl border border-white/20">
+              {/* Channel Header */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+                {/* Channel Avatar */}
+                <div className="w-20 h-20 flex-shrink-0">
+                  <img src={channelLogo} alt="YOGA WITH PRATISH" className="w-full h-full rounded-full object-cover shadow-lg" />
+                </div>
+                
+                {/* Channel Basic Info */}
+                <div className="text-center">
+                  <h3 className="text-2xl font-serif text-[#333333] mb-2">
+                    YOGA WITH PRATISH
+                  </h3>
+                  <p className="text-[#666] text-sm mb-1">@yogawithpratish2509</p>
+                  <p className="text-[#666] text-sm">40 subscribers • 13 videos</p>
+                </div>
+              </div>
+              
+              {/* Channel Description */}
+              <div className="text-center mb-6">
+                <p className="text-[#333333]/80 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+                  I have created this channel to upload videos about yoga and its benefits. Join me for authentic yoga practices and wellness guidance.
+                </p>
+              </div>
+              
+              {/* Channel Links */}
+              <div className="text-center mb-6">
+                <div className="flex flex-wrap justify-center gap-4 text-sm">
+                  <a 
+                    href="https://yogawithpratish.com" 
+                    className="text-[#ff0000] hover:text-[#cc0000] transition-colors underline"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    yogawithpratish.com
+                  </a>
+                  <span className="text-[#666]">and 3 more links</span>
+                </div>
+              </div>
+              
+              {/* Visit Channel Button */}
+              <div className="text-center">
+                <a 
+                  href={`https://www.youtube.com/channel/${channelId}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-[#ff0000] hover:bg-[#cc0000] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                  Visit YouTube Channel
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Video Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
             {youtubeVideos.map((video, index) => (
               <div 
                 key={video.id}
@@ -163,37 +212,7 @@ function YouTubeSection() {
             ))}
           </div>
 
-          {/* Channel Info */}
-          <div className="mt-12 md:mt-16 text-center">
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 md:p-8 max-w-4xl mx-auto shadow-lg border border-[#ddd]">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-16 h-16 bg-[#ff0000] rounded-full flex items-center justify-center mr-4">
-                  <span className="text-2xl">🧘‍♂️</span>
-                </div>
-                <div className="text-left">
-                  <h3 className="text-xl font-serif text-[#333333]">
-                    YOGA WITH PRATISH
-                  </h3>
-                  <p className="text-[#666] text-sm">@yogawithpratish2509</p>
-                  <p className="text-[#666] text-sm">40 subscribers • 13 videos</p>
-                </div>
-              </div>
-              <p className="text-[#333333]/80 mb-4 text-sm md:text-base">
-                I have created this channel to upload videos about yoga and its benefits. Join me for authentic yoga practices and wellness guidance.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="https://yogawithpratish.com" 
-                  className="text-[#ff0000] hover:text-[#cc0000] transition-colors text-sm"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  yogawithpratish.com
-                </a>
-                <span className="text-[#666] text-sm">and 3 more links</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Video Modal */}
