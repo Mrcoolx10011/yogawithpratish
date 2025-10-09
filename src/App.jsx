@@ -13,7 +13,6 @@ import ClassFlowSection from "./components/ClassFlowSection";
 import YouTubeSection from "./components/YouTubeSection";
 import Hero from "./components/Hero";
 import Contacts from "./components/Contacts";
-import Demo from "./components/Demo";
 import Gallery from "./components/Gallery";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
@@ -45,7 +44,6 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/demo" element={<Demo />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
