@@ -115,12 +115,12 @@ function Aboutme() {
             <div className="absolute top-12 right-12 w-16 h-16 bg-red-300 rounded-full opacity-60 animate-pulse"></div>
             
             {/* Right Side Vertical Dots */}
-            <div className="absolute top-16 right-32 flex flex-col space-y-2">
+            {/* <div className="absolute top-16 right-32 flex flex-col space-y-2">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="w-2 h-2 bg-red-400 rounded-full opacity-70 animate-pulse" 
                      style={{animationDelay: `${i * 0.2}s`}}></div>
               ))}
-            </div>
+            </div> */}
             
             {/* Far Right Orange Circle */}
             <div className="absolute top-20 right-8 w-12 h-12 bg-orange-300 rounded-full opacity-50 animate-bounce"></div>
