@@ -290,7 +290,7 @@ const FreeTrial = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="border-2 border-white  hover:bg-white hover:text-slate-900 font-bold text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   📱 WhatsApp: +91-9898018396
                 </Button>
