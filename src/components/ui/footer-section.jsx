@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function FooterSection() {
@@ -97,17 +98,20 @@ function FooterSection() {
                 { name: "Gallery", href: "/gallery" },
                 { name: "Contact", href: "/contact" }
               ].map((link, index) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  className="block transition-all hover:text-amber-600 text-slate-600 hover:translate-x-2 duration-300 font-medium"
-                  whileHover={{ x: 8 }}
+                  className="block"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  {link.name}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    className="block transition-all hover:text-amber-600 text-slate-600 hover:translate-x-2 duration-300 font-medium"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
           </motion.div>
