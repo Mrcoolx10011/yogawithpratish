@@ -67,7 +67,7 @@ export function PricingSection() {
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif mb-4 text-[#333333]">
+          <h2 className="text-4xl font-serif mb-4 text-[#333333] mt-[10px] ">
             Choose Your <span className="text-[#D4A373]">Path</span>
           </h2>
           <div className="w-20 h-1 bg-[#3A5A40] mx-auto mb-6"></div>

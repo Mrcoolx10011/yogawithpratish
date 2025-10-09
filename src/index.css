@@ -51,3 +51,8 @@ section,
   z-index: 9999 !important;
   pointer-events: auto !important;
 }
+@media (max-width: 768px) {
+  .floating-action-buttons {
+    margin-top: 100px;
+  }
+}
