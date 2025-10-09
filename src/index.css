@@ -1,6 +1,7 @@
 /* @tailwind base; */ /* this will reset the root style that's why it is commented */
 @tailwind components;
 @tailwind utilities;
+
 /* Universal pre-defined style */
 *,
 *::before,
@@ -10,7 +11,43 @@
   box-sizing: border-box;
 }
 
-/* Root  pre-defined style*/
+/* Root pre-defined style*/
 :root {
   font-size: calc(1rem + 0.5vw, 1.5rem);
+}
+
+/* Ensure proper scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure all page containers start from top */
+.app {
+  min-height: 100vh;
+}
+
+/* Ensure individual page components start from top */
+section,
+.page-container,
+.aboutme-section,
+.service-container,
+.contact-container,
+.signin-container {
+  position: relative;
+  top: 0;
+}
+
+/* Ensure scroll-to-top button is always visible when active */
+.scroll-to-top-button {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
 }

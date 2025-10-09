@@ -1,57 +1,66 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { FooterSection } from "./ui/footer-section";
 
 function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
-  const handleScroll = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user scrolls down 300px
+      if (window.pageYOffset > 300) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Check scroll position on mount
+    handleScroll();
+
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth'
     });
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
       {/* Enhanced Footer Component */}
       <FooterSection />
       
-      {/* Scroll to Top Button */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.button
-            className="fixed bottom-8 right-8 z-50 p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-2xl hover:from-red-600 hover:to-red-700 transition-all duration-300 group"
-            onClick={scrollToTop}
-            initial={{ opacity: 0, scale: 0, rotate: -180 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0, rotate: 180 }}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-            <FaArrowUp className="w-5 h-5 group-hover:animate-bounce text-white" />
-            <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {/* Simple Scroll to Top Button */}
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 w-14 h-14 bg-amber-500 hover:bg-amber-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50"
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 9999,
+            width: '56px',
+            height: '56px',
+            backgroundColor: '#f59e0b',
+            color: 'white',
+            border: 'none',
+            borderRadius: '50%',
+            cursor: 'pointer',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+          }}
+          aria-label="Scroll to top"
+        >
+          <FaArrowUp size={20} />
+        </button>
+      )}
     </>
   );
 }

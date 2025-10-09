@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import InteractiveBentoGallery from './ui/interactive-bento-gallery';
 import SimpleYouTubeGallery from './SimpleYouTubeGallery';
 import { FloatingParticles } from './ui/FloatingParticles';
@@ -19,6 +19,11 @@ import nineImg from '../assets/images/gallery/nine.webp';
 import tenImg from '../assets/images/gallery/ten.webp';
 
 const Gallery = () => {
+  useEffect(() => {
+    // Ensure the page starts from the top when accessed as individual page
+    window.scrollTo(0, 0);
+  }, []);
+
   // Yoga-themed media items using your new gallery images
   const yogaMediaItems = [
     {

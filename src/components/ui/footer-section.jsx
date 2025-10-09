@@ -266,9 +266,10 @@ function FooterSection() {
             whileHover={{ scale: 1.02, y: -4 }}
             transition={{ duration: 0.3 }}
           >
-            "Yoga is not about touching your toes. It is about what you learn on the way down."
+            "Yoga is the artwork of awareness on the canvas of body, mind, and soul."
             <footer className="mt-4 text-base text-amber-700 font-normal not-italic">
-              — Judith Hanson Lasater
+              Yoga quote
+              {/* — Judith Hanson Lasater */}
             </footer>
           </motion.blockquote>
         </motion.div>

@@ -6,10 +6,11 @@ This is a **single-page React application** for yoga and meditation services bui
 
 ### Key Architectural Patterns
 
-- **Single-page app with React Router**: Home page renders all components in sequence (`Hero → Aboutme → Services → Gallery → Feedback → Demo → Ourteam → Contacts`), while individual routes serve specific pages
-- **Dual styling system**: SCSS with custom mixins/variables for complex components + Tailwind for utilities
-- **Centralized cart state**: `MyContextProvider` manages shopping cart across components
-- **Service data architecture**: Tab-based services (Yoga/Meditation/Retreats) with nested pricing cards
+- **Single-page app with React Router**: Home page renders all components in sequence (`Hero → TeachingsSection → ClassFlowSection → WellnessSection → YouTubeSection → Gallery → Feedback → Contacts`), while individual routes serve specific pages
+- **Dual styling system**: SCSS with custom mixins/variables for complex components + Tailwind for utilities  
+- **Centralized cart state**: `MyContextProvider` manages shopping cart across components with conflict detection
+- **Service data architecture**: Evolution from tab-based services to modern `PricingSection` component with static pricing plans
+- **Component composition**: Services now use `FloatingParticles` + `PricingSection` pattern for enhanced UX
 
 ## Development Workflow
 
@@ -28,28 +29,17 @@ npm run lint         # ESLint checking
 
 ## Component Patterns
 
-### Services Component Architecture
-The `Services.jsx` demonstrates the project's complex state pattern:
+### Modern Pricing Architecture
+The app has evolved from tab-based services to a cleaner architecture:
 ```jsx
-// Tab-based service switching with cart integration
-const [tab, setTab] = useState(0);
-const { cart, setcart } = useMyContext();
+// Current: Services.jsx → PricingSection component with static data
+<FloatingParticles /> + <PricingSection />
 
-// Nested data structure: serviceData[tab] → cardsData[tab][cardIndex]
+// Legacy: database/services/data.js contains tab-based cardsData structure
+// Use for reference but prefer modern static pricing plans in PricingSection
 ```
 
-### SCSS Organization
-```scss
-// _variables.scss: Brand colors and breakpoints
-$secondary-background-color: #ece8e7;
-$text-color: #333;
-
-// _mixin.scss: Reusable component patterns
-@mixin button-style { /* Standard golden button style */ }
-@mixin section-padding-style { /* Consistent section spacing */ }
-```
-
-### Context Usage Pattern
+### Cart Integration Pattern
 ```jsx
 // Always destructure both cart and setcart
 const { cart, setcart } = useMyContext();
@@ -61,18 +51,36 @@ if (cardContainer.includes(item.cardContainer)) {
 }
 ```
 
+### SCSS Organization & Critical Font Loading
+```scss
+// _variables.scss: Brand colors and breakpoints
+$secondary-background-color: #ece8e7;
+$text-color: #333;
+
+// _mixin.scss: Font mixins with absolute paths - CRITICAL for app functionality
+@mixin heading-1 {
+  @font-face {
+    font-family: "Roboto-Black";
+    src: url("../assets/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+  }
+}
+```
+
 ## Integration Points
 
-### External Services
+### External Services & Dependencies
 - **EmailJS**: Contact form integration via `@emailjs/browser`
 - **Firebase Auth**: Currently disabled in App.jsx (commented out `<AuthProvider>`)
-- **React Bootstrap**: Modals and UI components
-- **React Icons**: Consistent iconography with `react-icons/fa`
+- **React Bootstrap**: Modals for cart conflicts and user feedback
+- **Radix UI**: Modern components (`@radix-ui/react-*`) for UI primitives
+- **Framer Motion + GSAP**: Animation libraries for enhanced UX
+- **Three.js**: 3D effects integration capability
 
-### Asset Management
+### Asset Management & Path Aliases
+- **Vite aliases**: `@assets`, `@services`, `@components` configured in vite.config.js
 - **Images**: Organized by feature in `src/assets/images/[feature]/`
-- **Fonts**: Custom fonts in `assets/fonts/Roboto/` and `assets/fonts/MoonDance/`
-- **Gallery**: Public images in `public/gallery/[1-9].jpg`
+- **Fonts**: Custom Roboto + MoonDance fonts in `assets/fonts/`
+- **Gallery**: Static images in `public/gallery/[1-9].jpg`
 
 ## Common Pitfalls
 

@@ -46,6 +46,11 @@ const AnimatedCard = ({ children, delay = 0 }) => {
 };
 
 function Aboutme() {
+  useEffect(() => {
+    // Ensure the page starts from the top
+    window.scrollTo(0, 0);
+  }, []);
+
   // Yoga instructor data
   const instructorData = {
     name: "Pratish",

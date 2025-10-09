@@ -596,7 +596,7 @@ export const YogaHeroSection = () => {
             <span className="credentials-text">YTTC-200 Certified • 10+ Years Experience</span>
           </div>
           <div className="floating-buttons">
-            <Link to="/demo" className="floating-btn trial-btn">
+            <Link to="/free-trial" className="floating-btn trial-btn">
               <span className="btn-icon">🎯</span>
               <span className="btn-text">Start Free Trial</span>
               <span className="btn-arrow">→</span>
