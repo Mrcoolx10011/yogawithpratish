@@ -3,55 +3,55 @@ import { motion } from 'framer-motion';
 
 const routineData = [
   {
-    time: "Morning",
+    time: "Dawn",
     icon: "🌅",
     color: "bg-yellow-100 border-yellow-300",
     activities: [
-      { icon: "🕐", text: "Wake early (5:00-6:00 AM)" },
-      { icon: "💧", text: "Drink 2 glasses of warm water" },
-      { icon: "🚿", text: "Jal-neti cleansing practice" },
-      { icon: "🧘", text: "60-minute yoga session" },
-      { icon: "🍃", text: "Pranayama and meditation" },
-      { icon: "🥄", text: "Herbal tea with honey" }
+      { icon: "🕐", text: "Rise with the sun (5:30-6:00 AM)" },
+      { icon: "💧", text: "Warm water with intention" },
+      { icon: "🌸", text: "Gentle cleansing ritual" },
+      { icon: "🧘", text: "Sacred movement practice" },
+      { icon: "🍃", text: "Breathwork & stillness" },
+      { icon: "🍯", text: "Nourishing herbal tea" }
     ]
   },
   {
-    time: "Noon",
+    time: "Radiance",
     icon: "☀️",
     color: "bg-orange-100 border-orange-300",
     activities: [
-      { icon: "🥗", text: "Light, sattvic meal" },
-      { icon: "🌿", text: "Include fresh vegetables and fruits" },
-      { icon: "🚰", text: "Stay hydrated throughout day" },
-      { icon: "👁️", text: "Practice eye exercises" },
-      { icon: "🚶", text: "10-minute mindful walking" },
-      { icon: "🧘‍♂️", text: "Brief breathing exercise" }
+      { icon: "🥗", text: "Mindful, wholesome meals" },
+      { icon: "🌿", text: "Fresh, seasonal abundance" },
+      { icon: "🚰", text: "Conscious hydration" },
+      { icon: "👁️", text: "Eye care & vision practice" },
+      { icon: "🚶", text: "Walking meditation" },
+      { icon: "🧘‍♂️", text: "Breath awareness moments" }
     ]
   },
   {
-    time: "Evening",
+    time: "Sunset",
     icon: "🌇",
     color: "bg-purple-100 border-purple-300",
     activities: [
-      { icon: "🍲", text: "Early dinner (before 7 PM)" },
-      { icon: "🌾", text: "Light grains, vegetables, legumes" },
-      { icon: "🚫", text: "Avoid heavy, fried foods" },
-      { icon: "📱", text: "Digital detox 1 hour before bed" },
-      { icon: "🌸", text: "Gentle stretching or yin yoga" },
-      { icon: "🧘‍♀️", text: "10 minutes of gratitude meditation" }
+      { icon: "🍲", text: "Early nourishment (before 7 PM)" },
+      { icon: "🌾", text: "Grounding grains & vegetables" },
+      { icon: "🚫", text: "Release heavy energies" },
+      { icon: "📱", text: "Digital sunset practice" },
+      { icon: "🌸", text: "Gentle evening flow" },
+      { icon: "🧘‍♀️", text: "Gratitude & reflection" }
     ]
   },
   {
-    time: "Night",
+    time: "Moonlight",
     icon: "🌙",
     color: "bg-blue-100 border-blue-300",
     activities: [
-      { icon: "🛁", text: "Warm bath with essential oils" },
-      { icon: "📖", text: "Read spiritual or calming literature" },
-      { icon: "🌬️", text: "Practice Nadi Shodhana (5 rounds)" },
-      { icon: "🧘", text: "Yoga Nidra for deep relaxation" },
-      { icon: "💭", text: "Reflect on the day's learnings" },
-      { icon: "🛌", text: "Sleep by 10:00 PM" }
+      { icon: "🛁", text: "Sacred bathing ritual" },
+      { icon: "📖", text: "Wisdom reading" },
+      { icon: "🌬️", text: "Balancing breath practice" },
+      { icon: "🧘", text: "Deep rest meditation" },
+      { icon: "💭", text: "Day's wisdom integration" },
+      { icon: "🛌", text: "Peaceful slumber by 10 PM" }
     ]
   }
 ];
@@ -78,15 +78,15 @@ export function DailyRoutineSection() {
       transition={{ duration: 0.8 }}
     >
       <div className="text-center mb-16">
-        <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-4">
-          Daily Lifestyle
+        <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-4" style={{ fontFamily: 'Lora, serif' }}>
+          Sacred Living
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-          Daily Routine & <span className="text-amber-600">Diet Guide</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+          Living in <span className="text-amber-600">Harmony</span>
         </h2>
         <div className="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
-        <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-          A complete guide to living yogically throughout your day
+        <p className="text-lg text-slate-700 max-w-2xl mx-auto" style={{ fontFamily: 'Lora, serif' }}>
+          Ancient wisdom for modern living - cultivate balance through mindful daily rhythms
         </p>
       </div>
 
@@ -102,7 +102,7 @@ export function DailyRoutineSection() {
                 >
                   {period.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold text-slate-900">{period.time}</h3>
+                <h3 className="text-xl font-bold text-slate-900" style={{ fontFamily: 'Playfair Display, serif' }}>{period.time}</h3>
               </div>
 
               <div className="space-y-3">
@@ -115,7 +115,7 @@ export function DailyRoutineSection() {
                     transition={{ duration: 0.5, delay: (index * 0.1) + (actIndex * 0.05) }}
                   >
                     <span className="text-lg flex-shrink-0 mt-0.5">{activity.icon}</span>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="text-sm text-slate-700 leading-relaxed font-medium" style={{ fontFamily: 'Lora, serif' }}>
                       {activity.text}
                     </p>
                   </motion.div>
@@ -133,8 +133,8 @@ export function DailyRoutineSection() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <h3 className="text-2xl font-bold mb-8 text-center text-slate-900">
-          <span className="text-green-700">Yogic Diet</span> Principles
+        <h3 className="text-2xl font-bold mb-8 text-center text-slate-900" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <span className="text-green-700">Nourishing</span> Wisdom
         </h3>
         
         <div className="grid md:grid-cols-3 gap-8">

@@ -70,7 +70,7 @@ function Aboutme() {
       "Stress Relief",
       "Beginner Friendly",
       "Advanced Poses",
-      "Prenatal Yoga"
+      "Pregnancy Yoga"
     ],
     achievements: [
       "International Yoga Alliance Certified",

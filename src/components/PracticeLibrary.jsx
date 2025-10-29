@@ -154,7 +154,7 @@ function PracticeLibrary() {
                 </h3>
                 
                 <div className="space-y-4">
-                  {renderAccordionSection("Beginner (20 Asanas)", asanasData.beginner, "asanas", "beginner")}
+                  {renderAccordionSection("Essential Asanas (20 Poses)", asanasData.beginner, "asanas", "beginner")}
                   {renderAccordionSection("Intermediate (20 Asanas)", asanasData.intermediate, "asanas", "intermediate")}
                   {renderAccordionSection("Advanced (20 Asanas)", asanasData.advanced, "asanas", "advanced")}
                 </div>
@@ -169,7 +169,7 @@ function PracticeLibrary() {
                 </h3>
                 
                 <div className="space-y-4">
-                  {renderAccordionSection("Beginner (16 Techniques)", pranayamasData.beginner, "pranayamas", "beginner")}
+                  {renderAccordionSection("Foundation Techniques (16 Methods)", pranayamasData.beginner, "pranayamas", "beginner")}
                   {renderAccordionSection("Intermediate (17 Techniques)", pranayamasData.intermediate, "pranayamas", "intermediate")}
                   {renderAccordionSection("Advanced (17 Techniques)", pranayamasData.advanced, "pranayamas", "advanced")}
                 </div>

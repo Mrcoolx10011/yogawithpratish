@@ -2,7 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'serif': ['Playfair Display', 'serif'],
+        'elegant': ['Cormorant Garamond', 'serif'],
+        'body': ['Lora', 'serif'],
+      },
+    },
   },
   plugins: [],
 };

@@ -125,6 +125,113 @@ export function PricingSection() {
           ))}
         </div>
 
+        {/* Pricing Comparison */}
+        <div className="mb-12 bg-white/80 rounded-xl p-8 shadow-lg">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-serif mb-4 text-[#333333]">
+              How Our Pricing <span className="text-[#D4A373]">Compares</span>
+            </h3>
+            <p className="text-[#333333]/80 max-w-3xl mx-auto">
+              See how our comprehensive yoga packages offer exceptional value compared to typical market rates
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-gradient-to-br from-[#DCE5DC] to-[#DCE5DC]/50 rounded-lg p-6 text-center">
+              <h4 className="font-semibold text-[#333333] mb-3">Market: Group Classes</h4>
+              <div className="text-2xl font-bold text-[#3A5A40] mb-2">$10-25</div>
+              <p className="text-sm text-[#333333]/70 mb-4">per session (USD)</p>
+              <div className="text-xs text-[#333333]/60">
+                • Live/virtual small groups
+                • Basic instruction
+                • Limited support
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-[#D4A373]/20 to-[#D4A373]/10 rounded-lg p-6 text-center border-2 border-[#D4A373]/30">
+              <h4 className="font-semibold text-[#333333] mb-3">Market: Private Sessions</h4>
+              <div className="text-2xl font-bold text-[#D4A373] mb-2">$30-150+</div>
+              <p className="text-sm text-[#333333]/70 mb-4">per hour (USD)</p>
+              <div className="text-xs text-[#333333]/60">
+                • One-on-one sessions
+                • Premium rates
+                • Limited availability
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-[#3A5A40]/10 to-[#3A5A40]/5 rounded-lg p-6 text-center">
+              <h4 className="font-semibold text-[#333333] mb-3">Market: Subscription Platforms</h4>
+              <div className="text-2xl font-bold text-[#3A5A40] mb-2">$14-25</div>
+              <p className="text-sm text-[#333333]/70 mb-4">per month (USD)</p>
+              <div className="text-xs text-[#333333]/60">
+                • On-demand videos
+                • No personal guidance
+                • Generic content
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-[#D4A373]/10 to-[#3A5A40]/10 rounded-lg p-6">
+            <h4 className="font-semibold text-[#333333] mb-4 text-center">
+              🌟 Why Our Plans Offer Better Value
+            </h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">✨</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Personalized Attention</p>
+                    <p className="text-sm text-[#333333]/70">Small group sizes ensure individual focus</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">🎯</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Comprehensive Support</p>
+                    <p className="text-sm text-[#333333]/70">24/7 WhatsApp guidance + recorded sessions</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">📈</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Progressive Learning</p>
+                    <p className="text-sm text-[#333333]/70">Structured curriculum adapted to your level</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">🔄</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Flexible Scheduling</p>
+                    <p className="text-sm text-[#333333]/70">Reschedule sessions to fit your lifestyle</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">🏆</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Experienced Instructor</p>
+                    <p className="text-sm text-[#333333]/70">Years of teaching expertise and certification</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="text-lg">💝</span>
+                  <div>
+                    <p className="font-medium text-[#333333]">Holistic Approach</p>
+                    <p className="text-sm text-[#333333]/70">Asanas, pranayama, meditation & lifestyle guidance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-6">
+            <p className="text-sm text-[#333333]/60">
+              <em>Market rates converted from USD. Our pricing is in INR and offers exceptional value for comprehensive yoga education.</em>
+            </p>
+          </div>
+        </div>
+
         {/* Additional Information */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white/80 rounded-xl p-6 shadow-lg">

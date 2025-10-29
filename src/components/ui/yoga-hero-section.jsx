@@ -564,26 +564,26 @@ export const YogaHeroSection = () => {
       
       {/* Main content */}
       <div className="yoga-hero-content">
-        <h1 ref={titleRef} className="yoga-hero-title" style={{ visibility: 'hidden' }}>
-          INNER
+        <h1 ref={titleRef} className="yoga-hero-title" style={{ visibility: 'hidden', fontFamily: 'Playfair Display, serif' }}>
+          BREATHE
         </h1>
         
-        <div ref={subtitleRef} className="yoga-hero-subtitle" style={{ visibility: 'hidden' }}>
+        <div ref={subtitleRef} className="yoga-hero-subtitle" style={{ visibility: 'hidden', fontFamily: 'Lora, serif' }}>
           <p className="subtitle-line">
-            Find your center, embrace the journey
+            Transform your life through ancient wisdom
           </p>
           <p className="subtitle-line">
-            where mind, body and spirit unite
+            Find peace in movement, strength in stillness
           </p>
         </div>
 
         {/* CTA Buttons */}
-        <div ref={ctaRef} className="yoga-hero-cta" style={{ visibility: 'hidden' }}>
+        <div ref={ctaRef} className="yoga-hero-cta" style={{ visibility: 'hidden', fontFamily: 'Lora, serif' }}>
           <Link to="/services" className="cta-primary">
-            Begin Your Journey
+            Start Your Practice
           </Link>
           <Link to="/demo" className="cta-outline">
-            Book Free Session
+            Free Discovery Call
           </Link>
         </div>
 
@@ -593,17 +593,17 @@ export const YogaHeroSection = () => {
           visibility: scrollProgress < 0.3 ? 'visible' : 'hidden'
         }}>
           <div className="credentials-banner">
-            <span className="credentials-text">YTTC-200 Certified • 10+ Years Experience</span>
+            <span className="credentials-text" style={{ fontFamily: 'Cormorant Garamond, serif' }}>Certified YTTC-200 • Transforming Lives Since 2014</span>
           </div>
           <div className="floating-buttons">
-            <Link to="/free-trial" className="floating-btn trial-btn">
-              <span className="btn-icon">🎯</span>
-              <span className="btn-text">Start Free Trial</span>
+            <Link to="/free-trial" className="floating-btn trial-btn" style={{ fontFamily: 'Lora, serif' }}>
+              <span className="btn-icon">✨</span>
+              <span className="btn-text">Begin Free Trial</span>
               <span className="btn-arrow">→</span>
             </Link>
-            <Link to="/batch-timings" className="floating-btn session-btn">
-              <span className="btn-icon">📅</span>
-              <span className="btn-text">Book a Session</span>
+            <Link to="/batch-timings" className="floating-btn session-btn" style={{ fontFamily: 'Lora, serif' }}>
+              <span className="btn-icon">�️</span>
+              <span className="btn-text">Private Session</span>
             </Link>
           </div>
         </div>

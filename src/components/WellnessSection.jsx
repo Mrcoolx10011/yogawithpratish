@@ -7,12 +7,12 @@ import { Button } from "./ui/button";
 
 // Data for the wellness areas
 const wellnessAreas = [
-  { title: "Stress Relief", tagline: "Calm mind & body", icon: "🧘‍♂️", description: "Reduce cortisol levels and find inner peace through targeted practices.", color: "from-blue-400 to-indigo-500", bgColor: "bg-blue-50", tagColor: "bg-blue-100 text-blue-800", benefits: ["Lower anxiety levels", "Better sleep quality", "Improved focus", "Emotional balance"], duration: "30-45 min", difficulty: "Beginner", sessions: "Daily" },
-  { title: "Weight Loss", tagline: "Reduce belly fat", icon: "⚖️", description: "Boost metabolism and achieve healthy weight through dynamic yoga.", color: "from-green-400 to-emerald-500", bgColor: "bg-green-50", tagColor: "bg-green-100 text-green-800", benefits: ["Burn calories", "Build lean muscle", "Boost metabolism", "Tone body"], duration: "45-60 min", difficulty: "Intermediate", sessions: "4x/week" },
-  { title: "PCOD/PCOS", tagline: "Hormonal balance", icon: "🧬", description: "Support reproductive health with specialized asanas and breathing.", color: "from-purple-400 to-pink-500", bgColor: "bg-purple-50", tagColor: "bg-purple-100 text-purple-800", benefits: ["Regulate cycles", "Reduce symptoms", "Balance hormones", "Improve fertility"], duration: "40-50 min", difficulty: "Beginner", sessions: "5x/week" },
-  { title: "Diabetes", tagline: "Manage sugar levels", icon: "🩸", description: "Improve insulin sensitivity and glucose metabolism naturally.", color: "from-red-400 to-orange-500", bgColor: "bg-red-50", tagColor: "bg-red-100 text-red-800", benefits: ["Lower blood sugar", "Improve insulin sensitivity", "Better circulation", "Weight management"], duration: "35-45 min", difficulty: "Beginner", sessions: "Daily" },
-  { title: "Heart Health", tagline: "Lower BP/cholesterol", icon: "❤️", description: "Strengthen cardiovascular system and improve circulation.", color: "from-rose-400 to-pink-500", bgColor: "bg-rose-50", tagColor: "bg-rose-100 text-rose-800", benefits: ["Lower blood pressure", "Improve circulation", "Strengthen heart", "Reduce cholesterol"], duration: "30-40 min", difficulty: "Beginner", sessions: "5x/week" },
-  { title: "Prenatal Yoga", tagline: "Pre/post pregnancy", icon: "👶", description: "Safe practices for expecting mothers and postnatal recovery.", color: "from-amber-400 to-yellow-500", bgColor: "bg-amber-50", tagColor: "bg-amber-100 text-amber-800", benefits: ["Ease pregnancy discomfort", "Prepare for labor", "Faster recovery", "Bond with baby"], duration: "25-35 min", difficulty: "Gentle", sessions: "3x/week" }
+  { title: "Mind & Soul", tagline: "Inner peace & clarity", icon: "🧘‍♂️", description: "Release tension and cultivate deep tranquility through mindful movement and breath.", color: "from-blue-400 to-indigo-500", bgColor: "bg-blue-50", tagColor: "bg-blue-100 text-blue-800", benefits: ["Reduced stress hormones", "Enhanced mental clarity", "Improved sleep quality", "Emotional balance"], duration: "30-45 min", difficulty: "All Levels", sessions: "Daily" },
+  { title: "Body Balance", tagline: "Strength meets grace", icon: "⚖️", description: "Build lean muscle and enhance flexibility while honoring your body's natural wisdom.", color: "from-green-400 to-emerald-500", bgColor: "bg-green-50", tagColor: "bg-green-100 text-green-800", benefits: ["Increased metabolism", "Lean muscle development", "Core strength", "Graceful posture"], duration: "45-60 min", difficulty: "Progressive", sessions: "4x/week" },
+  { title: "Women's Wellness", tagline: "Feminine vitality", icon: "🌸", description: "Nurture your feminine energy with practices designed for hormonal harmony.", color: "from-purple-400 to-pink-500", bgColor: "bg-purple-50", tagColor: "bg-purple-100 text-purple-800", benefits: ["Hormonal balance", "Cycle regulation", "Reduced symptoms", "Enhanced fertility"], duration: "40-50 min", difficulty: "Gentle", sessions: "5x/week" },
+  { title: "Vital Energy", tagline: "Natural healing", icon: "🌿", description: "Support your body's natural healing processes through therapeutic movement.", color: "from-red-400 to-orange-500", bgColor: "bg-red-50", tagColor: "bg-red-100 text-red-800", benefits: ["Improved circulation", "Enhanced insulin sensitivity", "Stable energy levels", "Natural detox"], duration: "35-45 min", difficulty: "Therapeutic", sessions: "Daily" },
+  { title: "Heart & Flow", tagline: "Cardiovascular harmony", icon: "❤️", description: "Strengthen your heart through gentle, flowing sequences that enhance circulation.", color: "from-rose-400 to-pink-500", bgColor: "bg-rose-50", tagColor: "bg-rose-100 text-rose-800", benefits: ["Heart strengthening", "Better circulation", "Pressure regulation", "Cholesterol balance"], duration: "30-40 min", difficulty: "Gentle", sessions: "5x/week" },
+  { title: "Sacred Journey", tagline: "Motherhood support", icon: "🤱", description: "Gentle, nurturing practices for the beautiful journey of pregnancy and beyond.", color: "from-amber-400 to-yellow-500", bgColor: "bg-amber-50", tagColor: "bg-amber-100 text-amber-800", benefits: ["Comfort during pregnancy", "Birth preparation", "Faster recovery", "Mother-baby bonding"], duration: "25-35 min", difficulty: "Nurturing", sessions: "3x/week" }
 ];
 
 // Sub-Component for the Expandable Card
@@ -36,10 +36,10 @@ function ExpandableWellnessCard({ area, isExpanded, onToggleExpand }) {
             <div className={`w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 bg-gradient-to-br ${area.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
               <span className="text-2xl sm:text-3xl">{area.icon}</span>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold text-gray-800">{area.title}</h3>
-            <Badge className={`text-xs font-semibold mt-1 ${area.tagColor} border-none`}>{area.tagline}</Badge>
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>{area.title}</h3>
+            <Badge className={`text-xs font-semibold mt-1 ${area.tagColor} border-none`} style={{ fontFamily: 'Lora, serif' }}>{area.tagline}</Badge>
           </div>
-          <p className="text-gray-600 text-sm leading-relaxed text-center mb-3 h-12">{area.description}</p>
+          <p className="text-gray-600 text-sm leading-relaxed text-center mb-3 h-12" style={{ fontFamily: 'Lora, serif' }}>{area.description}</p>
           <motion.div
             animate={{ height: contentHeight }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -60,12 +60,12 @@ function ExpandableWellnessCard({ area, isExpanded, onToggleExpand }) {
                       <div className="flex flex-col items-center"><Calendar size={16} className="text-gray-500 mb-1" /><span className="text-xs text-gray-600">{area.sessions}</span></div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm mb-2 flex items-center text-gray-700"><Heart size={14} className="mr-2 text-red-500" /> Benefits</h4>
-                      <ul className="space-y-1">{area.benefits.slice(0, 3).map((benefit, idx) => (<li key={idx} className="flex items-center text-xs text-gray-600"><span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>{benefit}</li>))}</ul>
+                      <h4 className="font-semibold text-sm mb-2 flex items-center text-gray-700" style={{ fontFamily: 'Cormorant Garamond, serif' }}><Heart size={14} className="mr-2 text-red-500" /> Benefits</h4>
+                      <ul className="space-y-1">{area.benefits.slice(0, 3).map((benefit, idx) => (<li key={idx} className="flex items-center text-xs text-gray-600" style={{ fontFamily: 'Lora, serif' }}><span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>{benefit}</li>))}</ul>
                     </div>
                      <div className="mt-4 space-y-2">
-                       <Button className={`w-full bg-gradient-to-r ${area.color} text-white font-semibold hover:shadow-lg transition-shadow duration-300`} onClick={(e) => e.stopPropagation()}>Book Free Trial</Button>
-                       <Button variant="ghost" className="w-full h-8 text-xs" onClick={(e) => e.stopPropagation()}>Learn More</Button>
+                       <Button className={`w-full bg-gradient-to-r ${area.color} text-white font-semibold hover:shadow-lg transition-shadow duration-300`} style={{ fontFamily: 'Lora, serif' }} onClick={(e) => e.stopPropagation()}>Start Journey</Button>
+                       <Button variant="ghost" className="w-full h-8 text-xs" style={{ fontFamily: 'Lora, serif' }} onClick={(e) => e.stopPropagation()}>Discover More</Button>
                      </div>
                   </motion.div>
                 )}
@@ -188,8 +188,8 @@ function WellnessSection() {
           initial="hidden"
           animate="visible"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 overflow-hidden py-2">
-            {"Yoga for Wellness".split(" ").map((word, index) => (
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-gray-800 mb-4 overflow-hidden py-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+            {"Healing Through Movement".split(" ").map((word, index) => (
               <motion.span 
                 key={index}
                 variants={wordAnimation}
@@ -201,10 +201,11 @@ function WellnessSection() {
           </h2>
           <motion.p 
             className="text-md sm:text-lg text-gray-600 max-w-3xl mx-auto"
+            style={{ fontFamily: 'Lora, serif' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.5 } }}
           >
-            Discover specialized yoga practices designed to support your unique health journey.
+            Ancient practices for modern wellness. Discover how yoga can transform your health and elevate your spirit.
           </motion.p>
         </motion.div>
       </div>
